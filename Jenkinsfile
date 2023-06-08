@@ -14,7 +14,7 @@ pipeline {
                        agent { label 'pull' }
                       steps {
                                 sh 'docker login -u ohurassa -p ynpassword'
-                                sh 'docker pull ohurassa/pipeimage'
+                                sh 'docker pull ohurassa/pipeimage:v1'
                                 sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
