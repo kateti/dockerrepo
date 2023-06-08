@@ -4,13 +4,13 @@ pipeline {
         stages {
                 stage('create image') {
                         steps {
-                                sh 'docker build -t pipeimage .'
+                                sh 'docker build -t ohurassa/pipeimage .'
                         }
                 
                      }
                stage('create container') {
                         steps {
-                                sh 'docker run -dit --name ohurassa/pipeimage'
+                                sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
                      }
