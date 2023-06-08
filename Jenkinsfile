@@ -5,6 +5,7 @@ pipeline {
                      agent { label 'centos' }
                         steps {
                                 sh 'docker build -t ohurassa/pipeimage .'
+                                sh 'docker login -u ohurassa -p ynpassword'
                                 sh 'docker push ohurassa/pipeimage'
                         }
                 
