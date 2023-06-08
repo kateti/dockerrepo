@@ -1,9 +1,8 @@
 pipeline {
-	
-    
+   
     stages {
 	stage('Create docker image') {
-	   agent {label 'centos'}   /* creating the docker image. */
+	   agent { label 'centos' }   /* creating the docker image. */
             steps {
                 sh 'docker build -t testpipe'
             }
@@ -17,7 +16,7 @@ pipeline {
 		}
         }
         stage('Create docker container') {
-            agent {label 'pull'}
+            agent { label 'pull' }
             steps {
                 sh 'docker run -dit --name ohurassa/testpipe'
             }
