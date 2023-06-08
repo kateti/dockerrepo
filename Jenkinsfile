@@ -1,7 +1,7 @@
 pipeline {
         agent any
         stages {
-                /* stage('create image') {
+                 stage('create image') {
                      agent { label 'centos' }
                         steps {
                                 sh 'docker build -t ohurassa/pipeimage .'
@@ -9,7 +9,7 @@ pipeline {
                                 sh 'docker push ohurassa/pipeimage:v1'
                         }
                 
-                     } */
+                     } 
               stage('create container') {
                        agent { label 'pull' }
                       steps {
