@@ -1,15 +1,16 @@
 pipeline {
-        agent { label 'centos' }
-
+        
         stages {
                 stage('create image') {
+                     agent { label 'centos' }
                         steps {
                                 sh 'docker build -t ohurassa/pipeimage .'
                         }
                 
                      }
                stage('create container') {
-                        steps {
+                       agent { label 'pull' }
+                       steps {
                                 sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
