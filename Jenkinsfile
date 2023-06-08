@@ -1,5 +1,5 @@
 pipeline {
-   
+   agent any
     stages {
 	stage('Create docker image') {
 	   agent { label 'centos' }   /* creating the docker image. */
