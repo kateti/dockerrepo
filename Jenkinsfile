@@ -15,6 +15,7 @@ pipeline {
                       steps {
                                 sh 'docker login -u ohurassa -p ynpassword'
                                 sh 'docker pull ohurassa/pipeimage'
+                                sh 'docker rm -f urassa'
                                 sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
