@@ -6,16 +6,18 @@ pipeline {
                         steps {
                                 sh 'docker build -t ohurassa/pipeimage .'
                                 sh 'docker login -u ohurassa -p ynpassword'
-                                sh 'docker push ohurassa/pipeimage'
+                                sh 'docker push ohurassa/pipeimage:v1'
                         }
                 
                      }
-              /* stage('create container') {
+              stage('create container') {
                        agent { label 'pull' }
-                       steps {
+                       steps 
+                                sh 'docker login -u ohurassa -p ynpassword'
+                                sh 'docker pull ohurassa/pipeimage:v1'
                                 sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
-                     } */
+                     } 
                 }
        }
