@@ -8,12 +8,12 @@ pipeline {
                         }
                 
                      }
-               stage('create container') {
+              /* stage('create container') {
                        agent { label 'pull' }
                        steps {
                                 sh 'docker run -dit --name urassa ohurassa/pipeimage'
                         }
                 
-                     }
+                     } */
                 }
        }
