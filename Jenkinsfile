@@ -1,5 +1,5 @@
 pipeline {
-        
+        agent any
         stages {
                 stage('create image') {
                      agent { label 'centos' }
